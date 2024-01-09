@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="height=device-height width=device-width, initial-scale=1.0"
+    />
+    <title>ACJC Fun-O-Rama Click-A-Prize</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+    <link rel="icon" type="image/x-icon" href="/src/acjccrest.png" />
+  </head>
+  <body>
+    <div
+      id="app"
+      class="bg-gray-700 items-center self-center flex align-middle flex-col w-screen h-screen justify-around"
+    >
+      <h1
+        class="text-4xl text-center font-bold text-white pb-8 pt-8 pl-4 pr-4 content-center self-center items-center"
+      >
+        ACJC Fun-O-Rama Click-A-Prize
+      </h1>
+      <div
+        class="reels flex flex-row content-center items-center self-center justify-around bg-yellow-400 rounded m-2 px-4 py-4 prevent-select w-fit space-x"
+      >
+        <div class="reel bg-gray-100 flex-1">
+          <div
+            class="boxes content-center items-center self-center justify-around"
+          ></div>
+        </div>
+
+        <div class="reel bg-gray-100 flex-1">
+          <div
+            class="boxes content-center items-center self-center justify-around"
+          ></div>
+        </div>
+
+        <div class="reel bg-gray-100 flex-1">
+          <div
+            class="boxes content-center items-center self-center justify-around"
+          ></div>
+        </div>
+      </div>
+
+      <div class="relative buttons prevent-select mb-20 pt-0">
+        <button
+          id="spinner"
+          class="mt-4 px-6 py-3 bg-red-500 text-white rounded"
+        >
+          Spin
+        </button>
+        <button
+          id="reseter"
+          class="mt-4 px-6 py-3 bg-blue-500 text-white rounded"
+        >
+          Reset
+        </button>
+
+        <!-- <p class="info prevent-select"></p> -->
+      </div>
+      <footer class="text-center prevent-select bottom-12 mt-100">
+          <div class="flex items-center align-bottom pb-5">
+            <div class="flex-grow border-t border-gray-50"></div>
+          </div>
+          <p class="text-sm text-white">
+            Made with ♥︎ in 🇸🇬 by
+            <a
+              href="https://www.instagram.com/granwyntan"
+              style="color: rgb(144, 205, 244)"
+              >Granwyn Tan</a
+            >
+            <br />Open sourced on
+            <a
+              href="https://github.com/granwyntan/clickaprize"
+              style="color: rgb(144, 205, 244)"
+              >GitHub</a
+            >
+          </p>
+        </footer>
+    </div>
+  </body>
+</html>
