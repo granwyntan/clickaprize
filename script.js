@@ -28,7 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const reels = document.querySelectorAll(".reel");
   document.querySelector("#spinner").addEventListener("click", spin);
   document.querySelector("#reseter").addEventListener("click", init);
+  document.querySelector("#editor").addEventListener("click", edit);
 
+  function edit() {
+    alert("Editor");
+  }
   async function spin() {
     init(false, 1, 2);
     for (const reel of reels) {
