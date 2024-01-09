@@ -49,16 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const reel of reels) {
       current += 1;
       var pool = [];
-      if (firstInit) {
-        reel.dataset.spinned = "0";
-        pool = ["❓"];
-      } else {
-      }
 
       const boxes = reel.querySelector(".boxes");
       const boxesClone = boxes.cloneNode(false);
-
-      if (!firstInit) {
+      if (firstInit) {
+        reel.dataset.spinned = "0";
+        pool = ["❓"];
+        document.getElementById("reseter").disabled = false;
+      } else {
+        document.getElementById("reseter").disabled = false;
         const arr = [];
         for (let n = 0; n < (groups > 0 ? groups : 1); n++) {
           arr.push(...items);
