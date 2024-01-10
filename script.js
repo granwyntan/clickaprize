@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
-  const audio = new Audio("/src/slot-machine-sound.wav");
-  const audio2 = new Audio("/src/win-3.wav");
+  const audio = new Audio("./src/slot-machine-sound.wav");
+  const audio2 = new Audio("./src/win-3.wav");
 
   var last = [];
 
