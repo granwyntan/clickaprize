@@ -85,11 +85,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function select(items) {
+    return items[Math.floor(Math.random() * items.length)];
+  }
+
   function init(firstInit = true, groups = 1, duration = 1) {
     audio.pause();
     audio.currentTime = 0;
     var current = -1;
     last = [];
+    selected = select(items);
+    r = Math.random();
     for (const reel of reels) {
       current += 1;
       var pool = [];
@@ -108,6 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         pool.push(...shuffle(arr));
         pool.splice(0, 0, [last[current]]);
+
+        console.log(r);
+        if (r > 0.5) {
+          pool.push(selected);
+        }
         last.push(pool.slice(-1));
 
         boxesClone.addEventListener(
@@ -141,7 +152,23 @@ document.addEventListener("DOMContentLoaded", function () {
           { once: true }
         );
       }
-
+      boxesClone.style.transitionDuration = `${duration > 0 ? duration : 1}s`;
+      // if (reel == reels[1]) {
+      //   for (let i = 0; i <= pool.length - 1; i++) {
+      //     const box = document.createElement("div");
+      //     box.classList.add("box");
+      //     box.style.width = reel.clientWidth + "px";
+      //     box.style.height = reel.clientHeight + "px";
+      //     box.classList.add(`-z-${i}`);
+      //     box.textContent = pool[i];
+      //     boxesClone.appendChild(box);
+      //   }
+      //   boxesClone.style.position = "absolute";
+      //   boxesClone.style.top = 0;
+      //   boxesClone.style.transform = `translateY(+${
+      //     reel.clientHeight * (pool.length - 1)
+      //   }px)`;
+      // } else {
       for (let i = pool.length - 1; i >= 0; i--) {
         const box = document.createElement("div");
         box.classList.add("box");
@@ -150,10 +177,10 @@ document.addEventListener("DOMContentLoaded", function () {
         box.textContent = pool[i];
         boxesClone.appendChild(box);
       }
-      boxesClone.style.transitionDuration = `${duration > 0 ? duration : 1}s`;
       boxesClone.style.transform = `translateY(-${
         reel.clientHeight * (pool.length - 1)
       }px)`;
+      // }
       reel.replaceChild(boxesClone, boxes);
     }
   }
