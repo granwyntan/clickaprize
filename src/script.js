@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "🎓", // Graduation Cap
   ];
 
-  // document.querySelector(".info").textContent = items.join(" ");
-
   const reels = document.querySelectorAll(".reel");
   document.querySelector("#spinner").addEventListener("click", spin);
   document.querySelector("#machine").addEventListener("click", spincheck);
