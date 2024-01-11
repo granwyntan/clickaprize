@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const reels = document.querySelectorAll(".reel");
   document.querySelector("#spinner").addEventListener("click", spin);
+  document.querySelector("#machine").addEventListener("click", spin);
   document.querySelector("#reseter").addEventListener("click", init);
   document.querySelector("#editor").addEventListener("click", edit);
 
